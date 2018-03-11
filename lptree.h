@@ -8,6 +8,16 @@
 
 #include "lptypes.h" 
 
+#if defined(_WIN32)
+# ifdef lpeglabel_EXPORTS
+#  define LPEGLABEL_API __declspec(dllexport)
+# else
+#  define LPEGLABEL_API __declspec(dllimport)
+# endif
+#else
+# define LPEGLABEL_API extern /**/
+#endif
+
 
 /*
 ** types of trees
@@ -75,7 +85,7 @@ extern const byte numsiblings[];
 #define sib2(t)         ((t) + (t)->u.ps)
 
 
-
+LPEGLABEL_API int luaopen_lpeglabel (lua_State *L);  /* labeled failure */
 
 
 
