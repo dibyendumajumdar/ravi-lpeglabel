@@ -48,7 +48,8 @@ IF(MSVC)
   ADD_DEFINITIONS(-D_CRT_SECURE_NO_DEPRECATE=1)
 ENDIF(MSVC)
 
-ADD_LIBRARY("lpeglabel" MODULE ${src})
+ADD_LIBRARY("lpeglabel" SHARED ${src})
+set_target_properties("lpeglabel" PROPERTIES PREFIX "")
 SET_TARGET_PROPERTIES("lpeglabel" PROPERTIES
   DEFINE_SYMBOL "lpeglabel_EXPORTS"
   IMPORT_PREFIX "lib")
