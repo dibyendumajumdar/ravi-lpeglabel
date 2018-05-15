@@ -414,48 +414,22 @@ Each capture may produce zero or more values.
 
 The following table summarizes the basic captures:
 
-<table border="1">
-<tbody><tr><td><b>Operation</b></td><td><b>What it Produces</b></td></tr>
-<tr><td><a href="#cap-c">`lpeg.C(patt)`</a></td>
-  <td>the match for `patt` plus all captures
-      made by `patt`</td></tr>
-<tr><td><a href="#cap-arg">`lpeg.Carg(n)`</a></td>
-    <td>the value of the n<sup>th</sup> extra argument to
-        `lpeg.match` (matches the empty string)</td></tr>
-<tr><td><a href="#cap-b">`lpeg.Cb(name)`</a></td>
-    <td>the values produced by the previous
-        group capture named `name`
-        (matches the empty string)</td></tr>
-<tr><td><a href="#cap-cc">`lpeg.Cc(values)`</a></td>
-    <td>the given values (matches the empty string)</td></tr>
-<tr><td><a href="#cap-f">`lpeg.Cf(patt, func)`</a></td>
-  <td>a <em>folding</em> of the captures from `patt`</td></tr>
-<tr><td><a href="#cap-g">`lpeg.Cg(patt [, name])`</a></td>
-    <td>the values produced by `patt`,
-        optionally tagged with `name`</td></tr>
-<tr><td><a href="#cap-p">`lpeg.Cp()`</a></td>
-    <td>the current position (matches the empty string)</td></tr>
-<tr><td><a href="#cap-s">`lpeg.Cs(patt)`</a></td>
-  <td>the match for `patt`
-      with the values from nested captures replacing their matches</td></tr>
-<tr><td><a href="#cap-t">`lpeg.Ct(patt)`</a></td>
-  <td>a table with all captures from `patt`</td></tr>
-<tr><td><a href="#cap-string">`patt / string`</a></td>
-  <td>`string`, with some marks replaced by captures
-      of `patt`</td></tr>
-<tr><td><a href="#cap-num">`patt / number`</a></td>
-  <td>the n-th value captured by `patt`,
-or no value when `number` is zero.</td></tr>
-<tr><td><a href="#cap-query">`patt / table`</a></td>
-  <td>`table[c]`, where `c` is the (first)
-      capture of `patt`</td></tr>
-<tr><td><a href="#cap-func">`patt / function`</a></td>
-  <td>the returns of `function` applied to the captures
-      of `patt`</td></tr>
-<tr><td><a href="#matchtime">`lpeg.Cmt(patt, function)`</a></td>
-  <td>the returns of `function` applied to the captures
-      of `patt`; the application is done at match time</td></tr>
-</tbody></table>
+| Operation | What it Produces |
+| ---- | ---- |
+|`lpeg.C(patt)` | the match for `patt` plus all captures made by `patt` |
+|`lpeg.Carg(n)` | the value of the n<sup>th</sup> extra argument to `lpeg.match` (matches the empty string) |
+|`lpeg.Cb(name)` | the values produced by the previous group capture named `name` (matches the empty string) |
+|`lpeg.Cc(values)` | the given values (matches the empty string)|
+|`lpeg.Cf(patt, func)` |a <em>folding</em> of the captures from `patt` |
+|`lpeg.Cg(patt [, name])` |the values produced by `patt`, optionally tagged with `name` |
+|`lpeg.Cp()` | the current position (matches the empty string) |
+|`lpeg.Cs(patt)` | the match for `patt` with the values from nested captures replacing their matches |
+|`lpeg.Ct(patt)` |a table with all captures from `patt`|
+|`patt / string`| `string`, with some marks replaced by captures of `patt` |
+|`patt / number` |the n-th value captured by `patt`, or no value when `number` is zero.|
+|`patt / table`| `table[c]`, where `c` is the (first) capture of `patt`|
+|`patt / function`| the returns of `function` applied to the capture of `patt` |
+|`lpeg.Cmt(patt, function)` | the returns of `function` applied to the captures of `patt`; the application is done at match time |
 
 A capture pattern produces its values only when it succeeds.
 For instance,
