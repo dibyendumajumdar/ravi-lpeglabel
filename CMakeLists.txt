@@ -6,7 +6,7 @@ SET(CMAKE_MODULE_PATH
   "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
   "${CMAKE_MODULE_PATH}")
 
-find_package(Lua REQUIRED)
+include(${CMAKE_INSTALL_PREFIX}/cmake/lua-config.cmake)
 
 message(STATUS "LUA_INCLUDE_DIR: ${LUA_INCLUDE_DIR}")
 message(STATUS "LUA_LIBRARIES  : ${LUA_LIBRARIES}")
